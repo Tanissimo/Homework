@@ -1,0 +1,23 @@
+function pow(x, y) {
+    let result = 1;
+     
+     
+   if (y===0) return 1;
+
+   if (y<0){
+       let posY = - y;
+       //console.log(posY);
+        for (let i = 0; i < posY; i++) {
+            result = (result * x);
+            reverseRes = 1/result;
+        }
+         //console.log(reverseRes);
+         return reverseRes;
+    }  
+    
+   for (let i = 0; i < y; i++) {
+        result = result * x;
+    }
+    return result;
+}
+ console.log(pow(4, -10));
