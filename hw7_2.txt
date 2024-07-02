@@ -1,0 +1,56 @@
+var services = {
+"стрижка": "60 грн",
+"гоління": "80 грн",
+"Миття голови": "100 грн"
+};
+
+console.log(services);
+
+services['Розбити скло'] = "200 грн";
+console.log(services);
+
+ services.price = function() {
+         let total = 0;
+        for (let key in services)
+        {
+            let withounSymbls = parseInt(services[key]);
+              if (typeof services[key] == 'string'){
+                //console.log(services[key]);
+            total += parseInt(services[key]);
+           //console.log(total)
+             }
+        }
+        return total;
+    };
+
+services.minPrice = function(){
+    let min =  services.price();
+     for (let key in services) {
+            let price = parseInt(services[key]);
+            if (price < min) {
+                min = price;
+            }
+     }
+     return min;
+};
+
+services.maxPrice = function() {
+    let maxPrice = 0;
+    for (let key in services) {
+            let price = parseInt(services[key]);
+            if ( maxPrice < price) {
+                maxPrice = price;
+            }
+    }
+    return maxPrice;
+};
+
+
+console.log("Total price:", services.price() + " грн"); 
+console.log("Min price:", services.minPrice()+ " грн"); 
+console.log("Max price:", services.maxPrice()+ " грн")
+
+
+
+
+
