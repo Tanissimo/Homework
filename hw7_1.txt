@@ -1,0 +1,23 @@
+function getInfo(obj, key) {
+    return key + ": " + obj[key];
+}
+
+let myObject = {
+    name: "Great Wall of China",
+    year: "7th century BC",
+    country: "China",
+};
+
+
+for (key in myObject) {
+        console.log(getInfo(myObject, key));
+}
+
+//console.log(myObject);
+console.log('---------');
+//console.log(myObject);
+myObject.visitors = 10000000 ;
+
+for (key in myObject) {
+        console.log(getInfo(myObject, key));
+}
